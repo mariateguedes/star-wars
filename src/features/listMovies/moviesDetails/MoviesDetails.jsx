@@ -17,7 +17,7 @@ function MoviesDetails({ id, characterMovies, isMobile, open }) {
       dispatch(setMovie(characterMovies?.filter((x) => x.episode_id === id)[0]));
     } 
     setOpenModal(true);
-  }, [id, characterMovies, movie, dispatch]);
+  }, [id, characterMovies, movie]);
 
   function handleClick() {
     setOpenModal(false);

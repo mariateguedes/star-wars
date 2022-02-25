@@ -51,7 +51,6 @@ export const starWarsSlice = createSlice({
       state.id = action.payload;
     },
     getMoviesSearch: (state, action) => {
-      console.log(action.payload, 'a');
       if (action.payload !== undefined || action.payload !== "") state.moviesData = state.moviesData.filter((x) => x.title.includes(action.payload));
     },
   },
