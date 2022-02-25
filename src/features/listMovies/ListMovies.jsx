@@ -12,6 +12,7 @@ import MoviesDetails from "./moviesDetails/MoviesDetails";
 import {
   getMovies,
   getMoviesSearch,
+  resetState,
   setMovie,
 } from "../StarWarsSlice";
 import SearchInput from "../../components/searchInput/SearchInput";
@@ -29,10 +30,11 @@ const ListMovies = ({ openMovie }) => {
 
   useEffect(() => {
     dispatch(getMovies());
-  }, [movie]);
+  }, [open, id]);
 
   function clickMovie(row) {
     dispatch(setMovie(row));
+    dispatch(resetState());
     setOpen(true);
   }
 

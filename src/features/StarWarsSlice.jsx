@@ -29,6 +29,9 @@ export const starWarsSlice = createSlice({
   name: "starWars",
   initialState,
   reducers: {
+    resetState: (state) => {
+      state.id = initialState.id;
+    },
     setCharacter: (state, action) => {
       state.character = action.payload;
       state.characterMovies = state.character.films.map((filmUrl) => {
@@ -77,7 +80,7 @@ export const starWarsSlice = createSlice({
   },
 });
 
-export const { setCharacter, setScroll, setMovie, setInputSearch, setMovieId, getMoviesSearch } =
+export const { setCharacter, setScroll, setMovie, setInputSearch, setMovieId, getMoviesSearch, resetState } =
   starWarsSlice.actions;
 
 export default starWarsSlice.reducer;
