@@ -36,7 +36,7 @@ function MoviesDetails({ id, characterMovies, isMobile, open }) {
         <Typography variant="h4">Título: {movie.title}</Typography>
         <Typography variant="h5">Director: {movie.director}</Typography>
         <Typography variant="h5">Productor: {movie.producer}</Typography>
-        <Typography variant="h5">Fecha de estreno: {new Date(movie.release_date.replace(/-/g, "/")).toLocaleDateString('pt-BR', {timeZone: 'UTC'})}</Typography>
+        <Typography variant="h5">Fecha de estreno: {movie.release_date}</Typography>
       </Container>
   );
   
