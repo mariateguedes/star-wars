@@ -24,7 +24,7 @@ const ListMovies = ({ openMovie }) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(openMovie ? openMovie : false);
 
-  const { moviesData, characterMovies, movie, id } = useSelector(
+  const { moviesData, characterMovies, id } = useSelector(
     (state) => state.rootReducer.starWars
   );
 
@@ -43,7 +43,6 @@ const ListMovies = ({ openMovie }) => {
     setOpen(false);
   }
 
-  if (moviesData === undefined) return null;
   return (
     <>
       <NavBar />
@@ -66,7 +65,7 @@ const ListMovies = ({ openMovie }) => {
                   <TableRow hover role="checkbox" key={row.episode_id}>
                     <TableCell
                       key={row.title}
-                      style={{ height: "2.6rem" }}
+                      style={{ height: "3rem" }}
                       onClick={() => clickMovie(row)}
                     >
                       {row.title}

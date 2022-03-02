@@ -81,7 +81,7 @@ const ListCharactersData = () => {
                     <TableCell
                       key={row.url}
                       onClick={() => clickCharacter(row)}
-                      style={{height: '2.6rem'}}
+                      style={{height: '3rem'}}
                     >
                       {row.name}
                     </TableCell>

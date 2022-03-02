@@ -23,6 +23,7 @@ const initialState = {
   scroll: false,
   moviesData: [],
   movie: {},
+  movies: []
 };
 
 export const starWarsSlice = createSlice({
@@ -54,7 +55,9 @@ export const starWarsSlice = createSlice({
       state.id = action.payload;
     },
     getMoviesSearch: (state, action) => {
+      console.log('action', action.payload);
       if (action.payload !== undefined || action.payload !== "") state.moviesData = state.moviesData.filter((x) => x.title.includes(action.payload));
+      else state.moviesData = state.movies;
     },
   },
   extraReducers: (builder) => {
@@ -74,6 +77,7 @@ export const starWarsSlice = createSlice({
       state.charactersData = action.payload.results;
     });
     builder.addCase(getMovies.fulfilled, (state, action) => {
+      state.movies = action.payload.results;
       state.moviesData = action.payload.results;
       state.scroll = false;
     });
